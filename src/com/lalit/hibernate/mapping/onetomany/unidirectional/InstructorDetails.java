@@ -1,4 +1,4 @@
-package com.lalit.hibernate.mapping.onetomany;
+package com.lalit.hibernate.mapping.onetomany.unidirectional;
 
 import javax.persistence.*;
 

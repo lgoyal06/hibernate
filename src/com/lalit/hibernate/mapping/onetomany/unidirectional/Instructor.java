@@ -1,4 +1,4 @@
-package com.lalit.hibernate.mapping.onetomany;
+package com.lalit.hibernate.mapping.onetomany.unidirectional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class Instructor {
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetails instructorDetails;
 
-    @OneToMany(mappedBy = "instructor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "instructor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Course> courses;
 
     public List<Course> getCourses() {
